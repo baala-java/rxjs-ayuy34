@@ -12,8 +12,14 @@ let subscription = myObservable.pipe(first()).subscribe(x => {
   console.log(x);
 });
 
+let subscriptionTwo = myObservable.subscribe(x => {
+  //Do something with the data.
+  console.log(x);
+});
+
 myObservable.next('Foo');
 //myObservable.complete();
 
-console.log(subscription.closed);
+console.log('is subscription closed ? ', subscription.closed);
 
+console.log('is subscriptionTwo closed ? ', subscriptionTwo.closed);
